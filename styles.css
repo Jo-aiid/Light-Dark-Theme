@@ -1,0 +1,99 @@
+body{
+--accent-color:orangered;
+background-color: #fff;
+--color:black;
+--btn-text-color:#fff;
+--transition-delay:1s;
+--fill:var(--accent-color);
+
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+height: 100vh;
+margin: 0;
+fill: var(--fill);
+
+}
+
+body.dark{
+    --accent-color:#DBDB66;
+    --background-color: #333;
+    --color:#fff;
+    --btn-text-color:#333;
+    background: var(--background-color);
+    --fill:var(--accent-color);
+  color: var(--color);
+  fill: var(--fill);
+    
+    }
+    
+.theme-toggle-btn{
+    color: var(--btn-text-color);
+background: var(--accent-color);
+border: none;
+border-radius: .25rem;
+display: flex;
+justify-content: center;
+align-items: center;
+padding: .3rem .5rem;
+transition: transform var(--transition-delay);
+margin: 0;
+fill: #fff;
+
+
+}
+
+.theme-toggle-btn:focus,
+.theme-toggle-btn:hover{
+
+    transform: scale(1.1);
+}
+
+
+
+
+.moon,.sun,.sun-moon{
+    height: 2rem;
+    width: 2rem;
+    margin: 0;
+    padding: 0;
+}
+
+.sun-moon-container{
+--rotate:0;
+    position: absolute;
+    height: 100vmin;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  
+   transform: rotate(calc(var(--rotate)*1deg));
+   transition: transform  var(--transition-delay) ease-in-out;
+}
+
+
+.sun{
+    position: absolute;
+    top:5%;
+    opacity: 1;
+}
+
+.moon{
+    position: absolute;
+    bottom:5%;
+    transform: rotate(180deg);
+    opacity: 0;
+}
+.dark .sun{
+    position: absolute;
+    top:5%;
+    opacity: 0;
+}
+
+.dark .moon{
+    position: absolute;
+    bottom:5%;
+    transform: rotate(180deg);
+    opacity: 1;
+}
